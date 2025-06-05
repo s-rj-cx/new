@@ -97,6 +97,10 @@ bash create.sh
 Inside the master instance:
 
 ```bash
+sudo su
+passwd jenkins
+# Enter a password
+su jenkins
 ssh-keygen
 ```
 
