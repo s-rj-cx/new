@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage ("Git SCM pull") {
-            steps {
-               git branch: 'resume_build', changelog: false, poll: false, url: 'https://github.com/Rocinate-droid/Portifolio.git' //change github credentials here
-                sh 'whoami'
-            }
-        }
          stage ("execute terraform build") {
             steps {
                 // change the command to terraform destroy --auto-approve after the usage and run the pipeline again to clean up node-instance aws resources
