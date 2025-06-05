@@ -31,7 +31,7 @@ pipeline {
             steps {
                 //update docker image details here if needed
                 sh ''' 
-                   sudo docker build -t nginx-image:v2 
+                   sudo docker build -t nginx-image:v2 .
                    '''
             }
         }
