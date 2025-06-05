@@ -56,11 +56,13 @@ This project demonstrates a complete Infrastructure as Code (IaC) pipeline to pr
 
 ## 🚀 Usage Instructions
 
+Note: Ensure that if you are using a windows machine, you would need to install a WSL and install git,ansible and terraform in it since ansible-vault can be edit using a linux os.
+
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Rocinate-droid/Devops-Project.git
-cd your-repo
+cd Devops-Project
 
 ## 2. AWS Credentials & Key Setup
 
@@ -84,6 +86,7 @@ export AWS_SECRET_ACCESS_KEY="your-secret-key"
 
 - Go to the master template folder and execute the following command:
 ```bash
+cd master_template/
 bash create.sh
 ```
 
