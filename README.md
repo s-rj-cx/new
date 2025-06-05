@@ -97,14 +97,11 @@ bash create.sh
 Inside the master instance:
 
 ```bash
-sudo su
-passwd jenkins
-# Enter a password
-su jenkins
+sudo -u jenkins -i
 ssh-keygen
 ```
 
-- Copy the **public key** and paste it into the `user_data` section of the `node_template` Terraform file.
+- Copy the **public key** from .pub file and paste it into the `user_data` section in the `node_template.tf` Terraform file.
 
 ---
 
@@ -113,7 +110,7 @@ ssh-keygen
 Inside the master instance:
 
 ```bash
-docker swarm init
+sudo docker swarm init
 ```
 
 - Copy the **join token** displayed in the terminal.
@@ -140,7 +137,7 @@ ansible-vault edit main.yml
 http://<master-public-ip>:8080
 ```
 
-- Add a Jenkins **credential** for accessing ansible vault(swarm token):
+- Add a Jenkins **credential** as secret text for accessing ansible vault(swarm token):
 
   - **ID**: `vault_password`  
   - **Secret Text**: `devops`
